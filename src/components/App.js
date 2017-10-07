@@ -2,10 +2,7 @@ import React from 'react'
 import { browserHistory, Router } from 'react-router'
 import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
-import AV from 'leancloud-storage'
-import { LEAN } from '../constants'
 
-AV.init(LEAN)
 
 class App extends React.Component {
   static propTypes = {
