@@ -1,14 +1,6 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/PageLayout'
-import EnsureLoggedIn from './EnsureLoggedIn'
-import Login from './Login'
-import AdminHome from './Home'
-import CounterRoute from './Counter'
-import ClassSChool from './ClassManage'
-import TagsRoute from './Tags'
-import RecColumRoute from './RecommendColumn'
-import { PlateRoute, ActivityRoute } from './Plate'
-import BannerRoute from './Banner'
+import Home from './Home'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -16,21 +8,9 @@ import BannerRoute from './Banner'
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout,
-  indexRoute: Login(store),
+  indexRoute: Home(store),
   childRoutes : [
-    EnsureLoggedIn(store, [
-      AdminHome(store, [
-        CounterRoute(store),
-        ClassSChool(store),
-        PlateRoute(store),
-        TagsRoute(store),
-        ActivityRoute(store),
-        CounterRoute(store),
-        RecColumRoute(store),
-        BannerRoute(store)
-      ]),
-    ]),
-    Login(store)
+    Home(store)
   ]
 })
 
